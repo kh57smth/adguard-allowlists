@@ -1,0 +1,79 @@
+name: Domain Testing
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  domain-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      ############################################################
+      # 1. Normalize list files (optional but recommended)
+      ############################################################
+      - name: Normalize list files
+        run: |
+          for FILE in *.txt; do
+            echo "Normalizing $FILE"
+            sed -i 's/\r$//' "$FILE"              # Remove CRLF
+            sed -i 's/[ \t]*$//' "$FILE"         # Trim trailing whitespace
+            sort -u "$FILE" -o "$FILE"           # Sort + dedupe
+            sed -i '/./,$!d' "$FILE"             # Remove leading empty lines
+            tac "$FILE" | sed '/./,$!d' | tac > "$FILE.tmp" && mv "$FILE.tmp" "$FILE"
+          done
+
+      ############################################################
+      # 2. Validate syntax
+      ############################################################
+      - name: Validate domain syntax
+        run: |
+          for FILE in *.txt; do
+            echo "Validating syntax in $FILE"
+            INVALID=$(grep -Ev '^(#|$|\|\|?[a-zA-Z0-9.-]+\^?$)' "$FILE" || true)
+            if [ ! -z "$INVALID" ]; then
+              echo "::error file=$FILE::Invalid syntax detected:"
+              echo "$INVALID"
+              exit 1
+            fi
+          done
+
+      ############################################################
+      # 3. DNS resolution test (warnings only)
+      ############################################################
+      - name: DNS resolution test
+        run: |
+          for FILE in *.txt; do
+            echo "DNS testing $FILE"
+            while read -r LINE; do
+              [[ "$LINE" =~ ^#|^$ ]] && continue
+              DOMAIN=$(echo "$LINE" | sed 's/^\|\|//' | sed 's/\^$//')
+              if ! dig +short "$DOMAIN" > /dev/null; then
+                echo "::warning file=$FILE::NXDOMAIN or no answer for $DOMAIN"
+              fi
+            done < "$FILE"
+          done
+
+      ############################################################
+      # 4. Private IP detection (hard fail)
+      ############################################################
+      - name: Detect private IP resolutions
+        run: |
+          for FILE in *.txt; do
+            echo "Checking for private IPs in $FILE"
+            while read -r LINE; do
+              [[ "$LINE" =~ ^#|^$ ]] && continue
+              DOMAIN=$(echo "$LINE" | sed 's/^\|\|//' | sed 's/\^$//')
+              IP=$(dig +short "$DOMAIN" | head -n 1)
+              if echo "$IP" | grep -Eq '^(10\.|192\.168\.|172\.(1[6-9]|2[0-9]|3[0-1])\.)'; then
+                echo "::error file=$FILE::Domain resolves to private IP: $DOMAIN -> $IP"
+                exit 1
+              fi
+            done < "$FILE"
+          done
