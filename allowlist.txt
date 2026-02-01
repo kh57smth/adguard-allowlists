@@ -30,13 +30,46 @@
 @@||nflxext.com^
 @@||fast.com^
 
-##############################
-# 4. Disney+
-##############################
-@@||disneyplus.com^
-@@||bamgrid.com^
-@@||dssott.com^
-@@||cdn.registerdisney.go.com^
+########################################
+# Disney+ 
+########################################
+
+disneyplus.com
+disney-plus.net
+dssott.com
+bamgrid.com
+
+api.disneyplus.com
+global.edge.bamgrid.com
+global.api.edge.bamgrid.com
+bam.nr-data.net
+
+cdn.registerdisney.go.com
+cdn.disneyplus.com
+cdn.dssott.com
+disneyplus.bncdn.net
+disneyplus.edgesuite.net
+disneyplus.akamaized.net
+dssott.akamaized.net
+dssott.edge.bamgrid.com
+
+widevine.entitlement.eu.bamgrid.com
+widevine.entitlement.us.bamgrid.com
+disney.playback.edge.bamgrid.com
+disney.playback.api.bamgrid.com
+
+disney.demdex.net
+disneyplus.demdex.net
+assets.adobedtm.com
+
+images.disneyplus.com
+static.dssott.com
+static.dssott-cdn.com
+
+akamaihd.net
+akamaihd-staging.net
+edgesuite.net
+edgekey.net
 
 ##############################
 # 5. YouTube
