@@ -1,4 +1,4 @@
-sed -i '1s/^\xEF\xBB\xBF//' allowlist.txt
+head -n 1 allowlist.txt | cat -v
 # ========AMAZON======
 # 1. Amazon
 # #############################
