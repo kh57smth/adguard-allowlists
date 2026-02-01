@@ -30,13 +30,13 @@ jobs:
           done
 
       ############################################################
-      # 2. Validate syntax
+      # 2. Validate syntax (FIXED to allow decorative headers)
       ############################################################
       - name: Validate domain syntax
         run: |
           for FILE in *.txt; do
             echo "Validating syntax in $FILE"
-            INVALID=$(grep -Ev '^(#|$|\|\|?[a-zA-Z0-9.-]+\^?$)' "$FILE" || true)
+            INVALID=$(grep -Ev '^(#.*|$|\|\|?[a-zA-Z0-9.-]+\^?$)' "$FILE" || true)
             if [ ! -z "$INVALID" ]; then
               echo "::error file=$FILE::Invalid syntax detected:"
               echo "$INVALID"
