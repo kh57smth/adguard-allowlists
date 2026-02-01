@@ -1,0 +1,173 @@
+##############################
+# 1. Amazon
+##############################
+@@||amazon.com^
+@@||amazon.ca^
+@@||media-amazon.com^
+@@||amazonaws.com^
+@@||cloudfront.net^
+@@||device-metrics-us.amazon.com^
+
+##############################
+# 2. Prime Video
+##############################
+@@||primevideo.com^
+@@||amazonvideo.com^
+@@||video.amazon.com^
+@@||atv-ext.amazon.com^
+@@||fls-na.amazon.com^
+@@||fls-na.amazon.ca^
+@@||media-amazon.com^
+@@||cloudfront.net^
+
+##############################
+# 3. Netflix
+##############################
+@@||netflix.com^
+@@||nflxvideo.net^
+@@||nflximg.net^
+@@||nflxso.net^
+@@||nflxext.com^
+@@||fast.com^
+
+##############################
+# 4. Disney+
+##############################
+@@||disneyplus.com^
+@@||bamgrid.com^
+@@||dssott.com^
+@@||cdn.registerdisney.go.com^
+
+##############################
+# 5. YouTube
+##############################
+@@||youtube.com^
+@@||ytimg.com^
+@@||googlevideo.com^
+@@||gvt2.com^
+@@||gvt1.com^
+@@||googleusercontent.com^
+
+##############################
+# 6. Apple
+##############################
+@@||apple.com^
+@@||icloud.com^
+@@||mzstatic.com^
+@@||itunes.apple.com^
+@@||apple-dns.net^
+
+##############################
+# 7. SmartThings
+##############################
+@@||smartthings.com^
+@@||api.smartthings.com^
+
+##############################
+# 8. Kuna
+##############################
+@@||kuna.com^
+@@||api.kuna.com^
+
+##############################
+# 9. Ring
+##############################
+@@||ring.com^
+@@||cloud.ring.com^
+
+##############################
+# 10. Samsung TV
+##############################
+@@||samsung.com^
+@@||samsungcloudsolution.com^
+@@||samsungosp.com^
+@@||tizenstore.com^
+
+##############################
+# 11. LG TV
+##############################
+@@||lg.com^
+@@||lgtvsdp.com^
+@@||webosapp.club^
+
+##############################
+# 12. Roku
+##############################
+@@||roku.com^
+@@||rokutime.com^
+@@||rokuapi.com^
+
+##############################
+# 13. Xbox
+##############################
+@@||xbox.com^
+@@||xboxlive.com^
+@@||xboxservices.com^
+@@||gamepass.com^
+
+##############################
+# 14. PlayStation
+##############################
+@@||playstation.com^
+@@||sonyentertainmentnetwork.com^
+@@||pscdn.co^
+
+##############################
+# 15. Steam
+##############################
+@@||steampowered.com^
+@@||steamcontent.com^
+@@||steamstatic.com^
+
+##############################
+# 16. EA
+##############################
+@@||ea.com^
+@@||origin.com^
+@@||eaassets-a.akamaihd.net^
+
+##############################
+# 17. Canadian Banking
+##############################
+@@||rbcroyalbank.com^
+@@||td.com^
+@@||bmo.com^
+@@||scotiabank.com^
+@@||atb.com^
+@@||cibc.com^
+
+##############################
+# 18. CDNs
+##############################
+@@||cloudfront.net^
+@@||akamaihd.net^
+@@||akamai.net^
+@@||fastly.net^
+@@||edgekey.net^
+@@||edgesuite.net^
+@@||cloudflare.com^
+@@||cloudflare-dns.com^
+
+##############################
+# 19. Cloud Providers
+##############################
+@@||amazonaws.com^
+@@||azureedge.net^
+@@||microsoft.com^
+@@||googleapis.com^
+@@||gvt1.com^
+@@||gvt2.com^
+
+##############################
+# 20. Android
+##############################
+@@||googleplay.com^
+@@||play.googleapis.com^
+@@||firebaseio.com^
+
+##############################
+# 21. iOS
+##############################
+@@||apple.com^
+@@||icloud.com^
+@@||mzstatic.com^
