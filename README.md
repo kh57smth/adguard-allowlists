@@ -1,32 +1,111 @@
 # AdGuard Home – Master DNS Allowlist  
 Maintained by **kh57smth**
 
-This repository contains a consolidated DNS allowlist designed for AdGuard Home.  
-It includes domain exceptions for major streaming services, smart home platforms, gaming networks, cloud providers, and essential Canadian services.
+# AdGuard Home – DNS Allowlist  
+Maintained by **kh57smth**
 
-The goal is simple:  
-**Fix false positives, improve reliability, and ensure all devices and apps function correctly while still using aggressive DNS filtering.**
+This repository contains a curated, safe, and production‑ready **DNS allowlist** for AdGuard Home.  
+It is designed to prevent false positives caused by aggressive blocklists while ensuring full functionality for:
+
+- Streaming services  
+- Smart home platforms  
+- Gaming networks  
+- Cloud providers  
+- CDNs  
+- Mobile OS services  
+- Banking and financial systems  
+
+The allowlist is organized into clearly separated categories inside `allowlist.txt`, making it easy to maintain, audit, and expand.
 
 ---
 
-## 📌 How to Use This Allowlist
+## 📌 How to Use This Allowlist in AdGuard Home
 
-1. Open your AdGuard Home dashboard  
-2. Go to **Filters → DNS Allowlists**  
+1. Open AdGuard Home  
+2. Navigate to **Filters → DNS Allowlists**  
 3. Click **Add allowlist**  
 4. Choose **URL**  
 5. Paste this link:
-https://raw.githubusercontent.com/kh57smth/adguard-allowlists/main/allowlist.txt (raw.githubusercontent.com in Bing)
-6. Save  
-7. Click **Check for updates** to verify the file loads correctly
+Absolutely, Ken — I can build you a versioned allowlist README.md that mirrors the structure, tone, and professionalism of your blocklist README, but tailored specifically for your master allowlist system.
+This version is clean, production‑ready, and matches the workflow you’ve been building with versioned releases, stable URLs, and AdGuard Home integration.
+Here’s your fully developed README.md for the allowlist, ready to drop into your repo.
 
-AdGuard will now automatically fetch updates from this repository.
+📄 README.md — Versioned DNS Allowlist (Ready to Use)
+# AdGuard Home – DNS Allowlist  
+Maintained by **kh57smth**
+
+This repository contains a curated, safe, and production‑ready **DNS allowlist** for AdGuard Home.  
+It is designed to prevent false positives caused by aggressive blocklists while ensuring full functionality for:
+
+- Streaming services  
+- Smart home platforms  
+- Gaming networks  
+- Cloud providers  
+- CDNs  
+- Mobile OS services  
+- Banking and financial systems  
+
+The allowlist is organized into clearly separated categories inside `allowlist.txt`, making it easy to maintain, audit, and expand.
 
 ---
 
-## 📁 Included Categories
+## 📌 How to Use This Allowlist in AdGuard Home
 
-This allowlist includes safe, required domains for:
+1. Open AdGuard Home  
+2. Navigate to **Filters → DNS Allowlists**  
+3. Click **Add allowlist**  
+4. Choose **URL**  
+5. Paste this link:
+
+
+https://raw.githubusercontent.com/kh57smth/adguard-allowlists/main/allowlist.txt
+
+6. Save  
+7. Click **Check for updates** to verify the file loads correctly
+
+AdGuard will automatically fetch updates from this repository.
+
+---
+
+## 🧩 File Structure
+
+
+adguard-allowlists/ │ ├── allowlist.txt        # Master DNS allowlist (all categories combined) └── README.md            # Documentation
+
+---
+
+## 🔄 Versioned Releases
+
+This repository uses GitHub Releases to provide **stable, tagged versions** of the allowlist.
+
+### Example versioned URL:
+
+
+https://raw.githubusercontent.com/kh57smth/adguard-allowlists/v1.0/allowlist.txt (raw.githubusercontent.com in Bing)
+
+### Why use versioned URLs?
+
+- Stable  
+- Predictable  
+- Easy rollback  
+- No surprises from live edits  
+- Ideal for production AdGuard setups  
+
+### How to publish a new version
+
+1. Update `allowlist.txt`  
+2. Commit your changes  
+3. Go to **Releases → Draft a new release**  
+4. Tag it (e.g., `v1.1`)  
+5. Publish  
+
+AdGuard users can switch to the new version when ready.
+
+---
+
+## 🧩 Categories Included in the Allowlist
+
+The allowlist includes safe, required domains for:
 
 - Amazon  
 - Prime Video  
@@ -54,35 +133,39 @@ Each category is clearly separated inside `allowlist.txt` for easy reading and f
 
 ---
 
-## 🛠️ File Structure
+## 🛠️ Allowlist Philosophy
+
+This allowlist is intentionally:
+
+- **Safe** for smart home and streaming  
+- **Minimal** — only required domains are included  
+- **Structured** for easy auditing  
+- **Compatible** with aggressive blocklists  
+- **Designed for real‑world home networks**  
+
+It prevents breakage without opening unnecessary domains.
 
 ---
 
-## 🔄 Updating the Allowlist
+## 🧬 Compatibility
 
-To update the allowlist:
-
-1. Edit `allowlist.txt`  
-2. Commit your changes  
-3. AdGuard will automatically pull the latest version on the next scheduled update
-
----
-
-## 🧩 Compatibility
-
-This allowlist is compatible with:
+This allowlist works with:
 
 - AdGuard Home  
 - Pi-hole (with regex support)  
-- DNS-based firewalls  
-- Router-level DNS filtering (OpenWrt, pfSense, OPNsense)
+- pfSense / OPNsense DNS  
+- OpenWrt / dnsmasq  
+- Router‑level DNS filtering  
 
 ---
 
-## 📬 Questions or Improvements?
+## 📬 Contributions & Improvements
 
-If you want to expand the list, add new categories, or split the file into multiple modular allowlists, feel free to update the repo or request changes.
+If you want to expand the list, add new categories, or refine the allowlist, feel free to update the repo or request changes.
 
 ---
 
-**Enjoy a cleaner, faster, and more reliable network!**
+**Enjoy a faster, more reliable, and fully functional network!**
+
+
+
