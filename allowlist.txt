@@ -113,6 +113,53 @@
 ||lgtvsdp.com^
 ||webosapp.club^
 
+# #######################################
+# Sony TV / Bravia / Google TV
+# Format: whitelist rules using ||domain^
+# #######################################
+
+# Sony core services
+||sony.com^
+||sony.net^
+||bravia.sony.net^
+||bravia-tv.com^
+||bravia.dl.playstation.net^
+
+# Firmware updates
+||update.sony.net^
+||prd.sonyglobal.net^
+||prd.sony.net^
+
+# Certificate validation
+||ocsp.sony.net^
+||ocsp.digicert.com^
+||ocsp.verisign.com^
+
+# Android TV / Google TV core
+||android.com^
+||google.com^
+||gvt1.com^
+||gvt2.com^
+||gvt3.com^
+||gstatic.com^
+||googleapis.com^
+||play.googleapis.com^
+||play-fe.googleapis.com^
+
+# Chromecast built-in
+||chromecast.com^
+||cast.google.com^
+||clients3.google.com^
+||clients4.google.com^
+
+# Time sync
+||time.android.com^
+||time.google.com^
+
+# Bravia Core (optional streaming)
+||braviacore.com^
+||sony-pictures.com^
+
 # #############################
 # ROKU
 # #############################
