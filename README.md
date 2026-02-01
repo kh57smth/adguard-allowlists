@@ -1,9 +1,6 @@
 # AdGuard Home – Master DNS Allowlist  
 Maintained by **kh57smth**
 
-# AdGuard Home – DNS Allowlist  
-Maintained by **kh57smth**
-
 This repository contains a curated, safe, and production‑ready **DNS allowlist** for AdGuard Home.  
 It is designed to prevent false positives caused by aggressive blocklists while ensuring full functionality for:
 
