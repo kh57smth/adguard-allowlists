@@ -1,0 +1,95 @@
+########################################
+# Audio Services Allowlist Module
+# Includes:
+# - Sonos
+# - Spotify
+# - SiriusXM
+# - HEOS (Denon/Marantz)
+########################################
+
+
+########################################
+# Sonos
+########################################
+
+sonos.com
+sonos.net
+sonos-radio.com
+msmetrics.ws.sonos.com
+
+time.sonos.com
+update.sonos.com
+ocsp.sonos.com
+api.ws.sonos.com
+api.sonos.com
+
+pandora.com
+pandora.net
+last.fm
+audio-ak.spotify.com
+
+
+########################################
+# Spotify
+########################################
+
+spotify.com
+scdn.co
+spoti.fi
+
+audio-fa.scdn.co
+audio-ak.spotify.com
+audio4-ak.spotify.com
+audio2-ak.spotify.com
+
+api.spotify.com
+apresolve.spotify.com
+dealer.spotify.com
+exp.wg.spotify.com
+
+heads4-ak.spotify.com
+heads-ak.spotify.com
+
+
+########################################
+# SiriusXM
+########################################
+
+siriusxm.com
+siriusxm.ca
+sxm.com
+siriusxmservices.com
+
+player.siriusxm.com
+streaming.siriusxm.com
+audio.siriusxm.com
+
+api.siriusxm.com
+auth.siriusxm.com
+login.siriusxm.com
+
+cdn.siriusxm.com
+
+
+########################################
+# HEOS / Denon / Marantz
+########################################
+
+heos.com
+denon.com
+marantz.com
+
+heos.denon.com
+heos.marantz.com
+prod-deezer.heos.com
+prod-spotify.heos.com
+
+pandora.com
+pandora.net
+tunein.com
+iheartradio.com
+deezer.com
+tidal.com
+
+firmware.denon.com
+firmware.marantz.com
