@@ -1,29 +1,24 @@
-nano allowlist.txt
-# ========AMAZON======
-# 1. Amazon
-# #############################
+! AdGuard Home allowlist — Adblock whitelist rules (@@||domain^)
+! Format: Adblock "whitelist" rules using @@||...^
+! Cleaned for Home Assistant (AdGuard Home) — UTF-8 LF, no extra lines/commands
+
+! ======== AMAZON / PRIME VIDEO / AWS ========
 @@||amazon.com^
 @@||amazon.ca^
 @@||media-amazon.com^
 @@||amazonaws.com^
 @@||cloudfront.net^
 @@||device-metrics-us.amazon.com^
-
-# #############################
-# 2. Prime Video
-# #############################
 @@||primevideo.com^
 @@||amazonvideo.com^
 @@||video.amazon.com^
 @@||atv-ext.amazon.com^
 @@||fls-na.amazon.com^
 @@||fls-na.amazon.ca^
-@@||media-amazon.com^
-@@||cloudfront.net^
 
-# #############################
-# 3. Netflix
-# #############################
+! #############################
+! NETFLIX
+! #############################
 @@||netflix.com^
 @@||nflxvideo.net^
 @@||nflximg.net^
@@ -31,50 +26,43 @@ nano allowlist.txt
 @@||nflxext.com^
 @@||fast.com^
 
-# #######################################
-# Disney+ 
-# #######################################
+! #######################################
+! DISNEY+
+! #######################################
+@@||disneyplus.com^
+@@||disney-plus.net^
+@@||dssott.com^
+@@||bamgrid.com^
+@@||api.disneyplus.com^
+@@||global.edge.bamgrid.com^
+@@||global.api.edge.bamgrid.com^
+@@||bam.nr-data.net^
+@@||cdn.registerdisney.go.com^
+@@||cdn.disneyplus.com^
+@@||cdn.dssott.com^
+@@||disneyplus.bncdn.net^
+@@||disneyplus.edgesuite.net^
+@@||disneyplus.akamaized.net^
+@@||dssott.akamaized.net^
+@@||dssott.edge.bamgrid.com^
+@@||widevine.entitlement.eu.bamgrid.com^
+@@||widevine.entitlement.us.bamgrid.com^
+@@||disney.playback.edge.bamgrid.com^
+@@||disney.playback.api.bamgrid.com^
+@@||disney.demdex.net^
+@@||disneyplus.demdex.net^
+@@||assets.adobedtm.com^
+@@||images.disneyplus.com^
+@@||static.dssott.com^
+@@||static.dssott-cdn.com^
+@@||akamaihd.net^
+@@||akamaihd-staging.net^
+@@||edgesuite.net^
+@@||edgekey.net^
 
-disneyplus.com
-disney-plus.net
-dssott.com
-bamgrid.com
-
-api.disneyplus.com
-global.edge.bamgrid.com
-global.api.edge.bamgrid.com
-bam.nr-data.net
-
-cdn.registerdisney.go.com
-cdn.disneyplus.com
-cdn.dssott.com
-disneyplus.bncdn.net
-disneyplus.edgesuite.net
-disneyplus.akamaized.net
-dssott.akamaized.net
-dssott.edge.bamgrid.com
-
-widevine.entitlement.eu.bamgrid.com
-widevine.entitlement.us.bamgrid.com
-disney.playback.edge.bamgrid.com
-disney.playback.api.bamgrid.com
-
-disney.demdex.net
-disneyplus.demdex.net
-assets.adobedtm.com
-
-images.disneyplus.com
-static.dssott.com
-static.dssott-cdn.com
-
-akamaihd.net
-akamaihd-staging.net
-edgesuite.net
-edgekey.net
-
-# #############################
-# 5. YouTube
-# #############################
+! #############################
+! YOUTUBE
+! #############################
 @@||youtube.com^
 @@||ytimg.com^
 @@||googlevideo.com^
@@ -82,87 +70,87 @@ edgekey.net
 @@||gvt1.com^
 @@||googleusercontent.com^
 
-# #############################
-# 6. Apple
-# #############################
+! #############################
+! APPLE / iOS
+! #############################
 @@||apple.com^
 @@||icloud.com^
 @@||mzstatic.com^
 @@||itunes.apple.com^
 @@||apple-dns.net^
 
-# #############################
-# 7. SmartThings
-# #############################
+! #############################
+! SMARTTHINGS
+! #############################
 @@||smartthings.com^
 @@||api.smartthings.com^
 
-# #############################
-# 8. Kuna
-# #############################
+! #############################
+! KUNA
+! #############################
 @@||kuna.com^
 @@||api.kuna.com^
 
-# #############################
-# 9. Ring
-# #############################
+! #############################
+! RING
+! #############################
 @@||ring.com^
 @@||cloud.ring.com^
 
-# #############################
-# 10. Samsung TV
-# #############################
+! #############################
+! SAMSUNG TV
+! #############################
 @@||samsung.com^
 @@||samsungcloudsolution.com^
 @@||samsungosp.com^
 @@||tizenstore.com^
 
-# #############################
-# 11. LG TV
-# #############################
+! #############################
+! LG TV
+! #############################
 @@||lg.com^
 @@||lgtvsdp.com^
 @@||webosapp.club^
 
-# #############################
-# 12. Roku
-# #############################
+! #############################
+! ROKU
+! #############################
 @@||roku.com^
 @@||rokutime.com^
 @@||rokuapi.com^
 
-# #############################
-# 13. Xbox
-# #############################
+! #############################
+! XBOX
+! #############################
 @@||xbox.com^
 @@||xboxlive.com^
 @@||xboxservices.com^
 @@||gamepass.com^
 
-# #############################
-# 14. PlayStation
-# #############################
+! #############################
+! PLAYSTATION
+! #############################
 @@||playstation.com^
 @@||sonyentertainmentnetwork.com^
 @@||pscdn.co^
 
-# #############################
-# 15. Steam
-# #############################
+! #############################
+! STEAM
+! #############################
 @@||steampowered.com^
 @@||steamcontent.com^
 @@||steamstatic.com^
 
-# #############################
-# 16. EA
-# #############################
+! #############################
+! EA
+! #############################
 @@||ea.com^
 @@||origin.com^
 @@||eaassets-a.akamaihd.net^
 
-# #############################
-# 17. Canadian Banking
-# #############################
+! #############################
+! CANADIAN BANKING
+! #############################
 @@||rbcroyalbank.com^
 @@||td.com^
 @@||bmo.com^
@@ -170,21 +158,21 @@ edgekey.net
 @@||atb.com^
 @@||cibc.com^
 
-# #############################
-# 18. CDNs
-# #############################
-@@||cloudfront.net^
-@@||akamaihd.net^
+! #############################
+! CDNs
+! #############################
 @@||akamai.net^
-@@||fastly.net^
-@@||edgekey.net^
-@@||edgesuite.net^
+@@||akamaihd.net^
+@@||cloudfront.net^
 @@||cloudflare.com^
 @@||cloudflare-dns.com^
+@@||edgekey.net^
+@@||edgesuite.net^
+@@||fastly.net^
 
-# #############################
-# 19. Cloud Providers
-# #############################
+! #############################
+! CLOUD PROVIDERS
+! #############################
 @@||amazonaws.com^
 @@||azureedge.net^
 @@||microsoft.com^
@@ -192,16 +180,11 @@ edgekey.net
 @@||gvt1.com^
 @@||gvt2.com^
 
-# #############################
-# 20. Android
-# #############################
+! #############################
+! ANDROID
+! #############################
 @@||googleplay.com^
 @@||play.googleapis.com^
 @@||firebaseio.com^
 
-# #############################
-# 21. iOS
-# #############################
-@@||apple.com^
-@@||icloud.com^
-@@||mzstatic.com^
+! End of allowlist
