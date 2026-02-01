@@ -1,4 +1,4 @@
-head -n 1 allowlist.txt | cat -v
+nano allowlist.txt
 # ========AMAZON======
 # 1. Amazon
 # #############################
