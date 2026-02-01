@@ -1,0 +1,138 @@
+name: Ultimate Auto Build Release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+jobs:
+  build-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      ############################################################
+      # 1. Auto-bump version if triggered manually
+      ############################################################
+      - name: Auto bump version (optional)
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          CURRENT=$(git tag --sort=-v:refname | head -n 1)
+          NEXT=$(echo $CURRENT | awk -F. '{printf "v%d.%d.%d", $1, $2, $3+1}')
+          echo "NEXT_VERSION=$NEXT" >> $GITHUB_ENV
+          git tag $NEXT
+          git push origin $NEXT
+
+      ############################################################
+      # 2. Normalize all .txt list files
+      ############################################################
+      - name: Normalize list files
+        run: |
+          for FILE in *.txt; do
+            echo "Cleaning $FILE"
+            sed -i 's/\r$//' "$FILE"
+            sed -i 's/[ \t]*$//' "$FILE"
+            sort -u "$FILE" -o "$FILE"
+            sed -i '/./,$!d' "$FILE"
+            tac "$FILE" | sed '/./,$!d' | tac > "$FILE.tmp" && mv "$FILE.tmp" "$FILE"
+          done
+
+      ############################################################
+      # 3. Validate syntax
+      ############################################################
+      - name: Validate domain syntax
+        run: |
+          for FILE in *.txt; do
+            INVALID=$(grep -Ev '^(#|$|\|\|?[a-zA-Z0-9.-]+\^?$)' "$FILE")
+            if [ ! -z "$INVALID" ]; then
+              echo "::error file=$FILE::Invalid syntax detected"
+              echo "$INVALID"
+              exit 1
+            fi
+          done
+
+      ############################################################
+      # 4. DNS resolution testing (NXDOMAIN detection)
+      ############################################################
+      - name: DNS resolution test
+        run: |
+          for FILE in *.txt; do
+            echo "Testing DNS for $FILE"
+            for DOMAIN in $(grep -Ev '^(#|$)' "$FILE"); do
+              CLEAN=$(echo $DOMAIN | sed 's/^\|\|//' | sed 's/\^$//')
+              if ! dig +short "$CLEAN" > /dev/null; then
+                echo "::warning file=$FILE::NXDOMAIN detected for $CLEAN"
+              fi
+            done
+          done
+
+      ############################################################
+      # 5. Private IP detection (RFC1918)
+      ############################################################
+      - name: Detect private IP resolutions
+        run: |
+          for FILE in *.txt; do
+            for DOMAIN in $(grep -Ev '^(#|$)' "$FILE"); do
+              CLEAN=$(echo $DOMAIN | sed 's/^\|\|//' | sed 's/\^$//')
+              IP=$(dig +short "$CLEAN" | head -n 1)
+              if echo "$IP" | grep -Eq '^(10\.|192\.168\.|172\.(1[6-9]|2[0-9]|3[0-1])\.)'; then
+                echo "::error file=$FILE::Domain resolves to private IP: $CLEAN -> $IP"
+                exit 1
+              fi
+            done
+          done
+
+      ############################################################
+      # 6. Module-aware validation
+      ############################################################
+      - name: Module-aware validation
+        run: |
+          declare -A MODULES
+          MODULES["streaming"]="netflix|primevideo|youtube|roku|samsung|lg"
+          MODULES["audio"]="sonos|spotify|siriusxm|heos"
+          MODULES["iot"]="smartthings|kuna|ring|homekit"
+          MODULES["gaming"]="xbox|playstation|steam|ea"
+
+          for FILE in *.txt; do
+            for MODULE in "${!MODULES[@]}"; do
+              if echo "$FILE" | grep -Eq "${MODULES[$MODULE]}"; then
+                echo "$FILE belongs to module: $MODULE"
+              fi
+            done
+          done
+
+      ############################################################
+      # 7. Extract release notes from CHANGELOG.md
+      ############################################################
+      - name: Extract release notes
+        id: changelog
+        run: |
+          TAG="${GITHUB_REF#refs/tags/}"
+          echo "tag=$TAG" >> $GITHUB_OUTPUT
+
+          BODY=$(awk "/## \\[$TAG\\]/,/## \\[/" CHANGELOG.md | sed '$d')
+          if [ -z "$BODY" ]; then
+            BODY="No changelog entry found for $TAG."
+          fi
+
+          echo "body<<EOF" >> $GITHUB_OUTPUT
+          echo "$BODY" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      ############################################################
+      # 8. Create Release Draft
+      ############################################################
+      - name: Create Release Draft
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.changelog.outputs.tag }}
+          name: Release ${{ steps.changelog.outputs.tag }}
+          body: ${{ steps.changelog.outputs.body }}
+          draft: true
+          files: |
+            *.txt
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
