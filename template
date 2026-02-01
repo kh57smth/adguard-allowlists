@@ -1,0 +1,60 @@
+# Version <VERSION>
+
+## Summary
+Brief overview of what this release includes and why it matters.
+
+Example:
+This release updates the DNS allowlist with new required domains, refinements, and compatibility improvements. It is designed to prevent false positives caused by aggressive blocklists while ensuring full functionality for streaming, gaming, smart‑home devices, cloud services, and mobile OS platforms.
+
+---
+
+## Changes
+
+### Added
+- New required domains introduced in this version.
+- Example:
+  - Added CDN domains for improved streaming reliability.
+  - Added SmartThings and Samsung TV service endpoints.
+  - Added banking and authentication domains.
+
+### Updated
+- Improvements or refinements to existing allowlist entries.
+- Example:
+  - Updated Roku and LG TV service domains.
+  - Improved categorization and formatting.
+  - Adjusted entries for better compatibility with blocklists.
+
+### Removed
+- Domains or rules removed for safety or redundancy.
+- Example:
+  - Removed deprecated service endpoints.
+  - Removed duplicates.
+  - Removed entries no longer required by apps or devices.
+
+---
+
+## Notes
+- Important compatibility or behavior details.
+- Example:
+  - Improved reliability for Netflix, Prime Video, and Disney+.
+  - Enhanced support for smart‑home ecosystems.
+  - No breaking changes expected.
+
+---
+
+## Files Included
+- `allowlist.txt` — master DNS allowlist  
+- Additional files if applicable
+
+---
+
+## Recommended Use
+Use the versioned URL for stable, predictable behavior:
+https://raw.githubusercontent.com/kh57smth/adguard-allowlists/ (raw.githubusercontent.com in Bing)<VERSION>/allowlist.txt
+
+Replace `<VERSION>` with the tag for this release.
+
+---
+
+## Release Date
+<YYYY-MM-DD>
