@@ -61,6 +61,12 @@
 ||edgesuite.net^
 ||edgekey.net^
 
+# #####################
+# BRITBOX
+# ####################
+||britbox.com^
+||britbox.co.uk^
+
 # #############################
 # YOUTUBE
 # #############################
@@ -235,9 +241,6 @@
 ||play.googleapis.com^
 ||firebaseio.com^
 
-# AdGuard Home allowlist — Adblock whitelist rules (||domain^)
-# Format: whitelist rules using ||...^ (CI validator expects # comments + ||domain^)
-
 # #######################################
 # Audio Services Allowlist Module
 # Includes:
@@ -245,12 +248,10 @@
 # - Spotify
 # - SiriusXM
 # - HEOS (Denon/Marantz)
-# #######################################
 
 # #######################################
 # Sonos
 # #######################################
-
 ||sonos.com^
 ||sonos.net^
 ||sonos-radio.com^
@@ -270,7 +271,6 @@
 # #######################################
 # Spotify
 # #######################################
-
 ||spotify.com^
 ||scdn.co^
 ||spoti.fi^
@@ -291,7 +291,6 @@
 # #######################################
 # SiriusXM
 # #######################################
-
 ||siriusxm.com^
 ||siriusxm.ca^
 ||sxm.com^
@@ -310,7 +309,6 @@
 # #######################################
 # HEOS / Denon / Marantz
 # #######################################
-
 ||heos.com^
 ||denon.com^
 ||marantz.com^
