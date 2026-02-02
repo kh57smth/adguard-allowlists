@@ -121,9 +121,7 @@
 
 # #######################################
 # Sony TV / Bravia / Google TV
-# Format: whitelist rules using ||domain^
 # #######################################
-
 # Sony core services
 ||sony.com^
 ||sony.net^
